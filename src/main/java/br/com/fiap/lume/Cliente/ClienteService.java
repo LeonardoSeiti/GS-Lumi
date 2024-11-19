@@ -1,6 +1,7 @@
 package br.com.fiap.lume.Cliente;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -10,10 +11,19 @@ public class ClienteService {
     @Autowired
     ClienteRepository repository;
 
+    @Autowired
+    PasswordEncoder passwordEncoder;
+    //Find all
     public List<Cliente> findAll() {
         return repository.findAll();
     }
-    public Cliente save(Cliente cliente) {
+    //Create cliente
+    public Cliente create(Cliente cliente) {
+        cliente.setSenha(passwordEncoder.encode(cliente.getSenha()));
         return repository.save(cliente);
     }
+    public Cliente update (Cliente cliente){
+        cliente.setSenha(passwordEncoder.encode(cliente.getSenha()));
+        return repository.save(cliente);
+    }    
 }
