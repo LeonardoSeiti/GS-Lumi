@@ -3,7 +3,6 @@ package br.com.fiap.lume.Cliente;
 import br.com.fiap.lume.Cliente.dto.ClienteRequest;
 import br.com.fiap.lume.Cliente.dto.ClienteResponse;
 import io.swagger.v3.oas.annotations.Operation;
-import lombok.extern.slf4j.Slf4j;
 import static org.springframework.http.HttpStatus.NOT_FOUND;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -16,7 +15,6 @@ import org.springframework.web.util.UriComponentsBuilder;
 
 @RestController
 @RequestMapping("/cliente")
-@Slf4j
 public class ClienteController {
     @Autowired
     ClienteService service;
@@ -32,6 +30,10 @@ public class ClienteController {
         return repository.findAll(pageable);
     }
     //Cadastro de cliente - Método POST
+    @Operation(
+            summary = "Criação de Clientes",
+            description = "Criação de cadastro de clientes."
+    )
     @PostMapping
     public ResponseEntity<ClienteResponse> create(@RequestBody ClienteRequest clienteRequest, UriComponentsBuilder uriBuilder) {
         var cliente = service.create(clienteRequest.toModel());
@@ -44,6 +46,10 @@ public class ClienteController {
     }
 
     //Atualizar dados do cliente - Método PUT
+    @Operation(
+            summary = "Atualizar de Clientes",
+            description = "Alteração de cadastro de clientes."
+    )
     @PutMapping("/{id}")
     public Cliente update(@PathVariable Long id, @RequestBody Cliente cliente) {
         verificarClienteExistente(id);
@@ -52,6 +58,10 @@ public class ClienteController {
     }
 
     //Deletar cliente - Método DELETE
+    @Operation(
+            summary = "Apaga cadastro de Clientes",
+            description = "Apaga o cadastro de clientes."
+    )
     @DeleteMapping("/{id}")
     public void destroy(@PathVariable Long id) {
         verificarClienteExistente(id);

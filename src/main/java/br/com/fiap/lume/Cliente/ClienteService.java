@@ -13,7 +13,7 @@ public class ClienteService {
 
     @Autowired
     PasswordEncoder passwordEncoder;
-    //Find all
+    //Find all - Busca por todos os clientes
     public List<Cliente> findAll() {
         return repository.findAll();
     }
