@@ -52,7 +52,7 @@ public class DispositivoController {
     )
     @PutMapping("/{id}")
     public Dispositivo update(@PathVariable Long id, @RequestBody Dispositivo dispositivo) {
-        virificarDispositivoExistente(id);
+        verificarDispositivoExistente(id);
         dispositivo.setId(id);
         return service.update(dispositivo);
     }
@@ -63,11 +63,11 @@ public class DispositivoController {
     )
     @DeleteMapping("/{id}")
     public void destroy(@PathVariable Long id) {
-        virificarDispositivoExistente(id);
+        verificarDispositivoExistente(id);
         repository.deleteById(id);
     }
     //Método para verificar se o dispositivo existe
-    private void virificarDispositivoExistente(Long id){
+    private void verificarDispositivoExistente(Long id){
         repository
                 .findById(id)
                 .orElseThrow(() -> new ResponseStatusException(

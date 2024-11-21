@@ -1,11 +1,13 @@
-package br.com.fiap.lume.Dispositivo;
+package br.com.fiap.lume.Rotina;
 
-import br.com.fiap.lume.Cliente.Cliente;
+import br.com.fiap.lume.Dispositivo.Dispositivo;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+
 import java.time.LocalDateTime;
 
 @Data
@@ -13,16 +15,16 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-@Table(name = "t_dispositivo")
-public class Dispositivo {
+@Table(name = "t_rotina")
+public class Rotina {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String nome;
-    private String tipo;
-    private Float consumoMedio;
-    private LocalDateTime dataInstalacao;
+    private String descricao;
+    private String horaInicio;
+    private String horaFim;
 
     @ManyToOne
-    private Cliente cliente;
+    Dispositivo dispositivo;
 }
