@@ -1,7 +1,7 @@
 # Projeto Lumi - Global Solution 
 O aplicativo de automação residencial é uma solução inovadora que utiliza inteligência artificial (IA) para gerenciar eletrodomésticos de forma eficiente, aprendendo padrões de uso e otimizando o consumo de energia. Com foco na sustentabilidade e na conveniência, o produto é voltado para pessoas que buscam automatizar suas residências e reduzir desperdícios energéticos.
 
-## Integrantes do grupo
+## Integrantes do grupo 
 
 - [Ezequiel Bispo de Jesus](https://github.com/EzequielBispo) - RM 99573 - Turma  2TDSPY
 
