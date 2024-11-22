@@ -2,7 +2,6 @@ package br.com.fiap.lume.Rotina.dto;
 
 import br.com.fiap.lume.Rotina.Rotina;
 
-import java.time.LocalDateTime;
 
 public record RotinaRequest(
         Long id,
