@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @SpringBootApplication
 @OpenAPIDefinition(
         info = @Info(
-                title = "Lumi API",
+                title = "Lume API",
                 version = "1.0.0",
                 description = "API de gastos energéticos",
                 contact = @Contact(name = "Leonardo Seiti", url = "https://www.linkedin.com/in/leonardoseiti/")
